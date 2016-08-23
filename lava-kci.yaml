@@ -1,0 +1,35 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  generation: 2
+  labels:
+    run: lava-kci
+  name: lava-kci
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: lava
+    spec:
+      containers:
+      - name: lava-kci
+        image: forcedinductionz/lava-docker:kernelci
+        ports:
+        - containerPort: 80
+        stdin: true
+        tty: true
+        securityContext:
+          privileged: true
+      volumes:
+      - name: dev
+        hostPath:
+          path: /dev
+      volumes:
+      - name: modules
+        hostPath:
+          path: /lib/modules
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
