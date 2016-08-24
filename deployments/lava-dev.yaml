@@ -26,7 +26,6 @@ spec:
       - name: dev
         hostPath:
           path: /dev
-      volumes:
       - name: modules
         hostPath:
           path: /lib/modules
