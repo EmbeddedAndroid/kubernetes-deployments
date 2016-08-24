@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       labels:
-        app: lava
+        app: lava-kci
     spec:
       containers:
       - name: lava-kci

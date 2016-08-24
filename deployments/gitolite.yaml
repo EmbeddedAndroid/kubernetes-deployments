@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  generation: 1
+  generation: 2
   labels:
     run: gitolite
   name: gitolite

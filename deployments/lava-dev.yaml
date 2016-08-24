@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       labels:
-        app: lava
+        app: lava-dev
     spec:
       containers:
       - name: lava-dev
