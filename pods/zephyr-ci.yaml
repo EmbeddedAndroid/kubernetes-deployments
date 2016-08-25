@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  generateName: zephyr-ci-
+  labels:
+    app: zephyr-ci
+spec:
+  containers:
+    - name: zephyr-builder
+      image: forcedinductionz/ubuntu-zephyr:las16
+      stdin: true
+      tty: true
+      ports:
+        - containerPort: 8000
+      env:
+      - name: ZEPHYR_OUTDIR
+        value: /var/www/html/zephyr
+    - name: lava-dev
+      image: forcedinductionz/lava-docker:las16
+      ports:
+      - containerPort: 80
+      stdin: true
+      tty: true
+      securityContext:
+        privileged: true
+  volumes:
+  - name: dev
+    hostPath:
+      path: /dev
