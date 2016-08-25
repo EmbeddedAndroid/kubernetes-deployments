@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  generateName: zephyr-builder-
+  labels:
+    app: zephyr-builder
+spec:
+  containers:
+    - name: zephyr-builder
+      image: forcedinductionz/ubuntu-zephyr
+      stdin: true
+      tty: true
