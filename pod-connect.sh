@@ -1,1 +1,1 @@
-kubectl exec $1 -i -t -- bash -il
+kubectl --namespace=$1 exec $2 -i -t -- bash -il
