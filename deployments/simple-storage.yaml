@@ -18,6 +18,13 @@ spec:
         image: milocasagrande/simple-storage
         ports:
         - containerPort: 5000
+        volumeMounts:
+        - name: nfs
+          mountPath: "/mnt/artifacts"
+      volumes:
+      - name: nfs
+        persistentVolumeClaim:
+          claimName: nfs
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
