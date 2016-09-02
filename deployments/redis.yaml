@@ -5,7 +5,7 @@ metadata:
   labels:
     run: redis
   name: redis
-  namespace: default
+  namespace: titan
 spec:
   replicas: 1
   template:
