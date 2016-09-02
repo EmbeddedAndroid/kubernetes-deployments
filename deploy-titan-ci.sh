@@ -1,6 +1,6 @@
-kubectl delete service gitolite
-kubectl delete service redis
-kubectl delete service simple-storage
+kubectl --namespace=titan delete service gitolite
+kubectl --namespace=titan delete service redis
+kubectl --namespace=titan delete service simple-storage
 kubectl create -f deployments/simple-storage.yaml --record
 kubectl expose --namespace=titan -f deployments/simple-storage.yaml --port=5000 --target-port=5000 --external-ip="192.168.1.2"
 kubectl create -f deployments/redis.yaml --record
