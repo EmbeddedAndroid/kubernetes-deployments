@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  generation: 2
+  labels:
+    run: simple-storage
+  name: simple-storage
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: simple-storage
+    spec:
+      containers:
+      - name: simple-storage
+        image: milocasagrande/simple-storage
+        ports:
+        - containerPort: 5000
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
