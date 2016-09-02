@@ -5,7 +5,7 @@ metadata:
   labels:
     run: lava-kci
   name: lava-kci
-  namespace: default
+  namespace: lava
 spec:
   replicas: 1
   template:

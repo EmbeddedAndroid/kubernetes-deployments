@@ -5,7 +5,7 @@ metadata:
   labels:
     run: lava-dev
   name: lava-dev
-  namespace: default
+  namespace: lava
 spec:
   replicas: 1
   template:
