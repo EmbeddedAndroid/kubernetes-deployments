@@ -8,5 +8,5 @@ spec:
   accessModes:
     - ReadWriteMany
   nfs:
-    server: dl360-05
+    server: 192.168.1.6
     path: "/opt/nfs"

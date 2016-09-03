@@ -1,6 +1,10 @@
+kubectl --namespace=titan delete pvc nfs
+kubectl delete pv nfs
 kubectl --namespace=titan delete service gitolite
 kubectl --namespace=titan delete service redis
 kubectl --namespace=titan delete service simple-storage
+kubectl create -f volumes/nfs-pv.yaml --record
+kubectl create -f volumes/nfs-pvc.yaml --record
 kubectl create -f deployments/simple-storage.yaml --record
 kubectl expose --namespace=titan -f deployments/simple-storage.yaml --port=5000 --target-port=5000 --external-ip="192.168.1.2"
 kubectl create -f deployments/redis.yaml --record
