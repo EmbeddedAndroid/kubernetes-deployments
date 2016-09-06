@@ -9,13 +9,14 @@ spec:
   containers:
     - name: zephyr-builder
       image: forcedinductionz/ubuntu-zephyr:las16
+      imagePullPolicy: Always
       stdin: true
       tty: true
       volumeMounts:
       - name: nfs
         mountPath: "/mnt/artifacts"
-   volumes:
-   - name: nfs
-     persistentVolumeClaim:
-       claimName: nfs
+  volumes:
+  - name: nfs
+    persistentVolumeClaim:
+      claimName: nfs
 
