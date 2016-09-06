@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  generation: 2
+  labels:
+    run: mariadb
+  name: mariadb
+  namespace: titan
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mariadb
+    spec:
+      containers:
+      - name: mariadb
+        image: mariadb
+        tty: true
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: ROOT_PASSWORD
+        - name: MYSQL_USER
+          value: USER_NAME
+        - name: MYSQL_PASSWORD
+          value: USER_PASSWORD
+        - name: MYSQL_DATABASE
+          value: DB_NAME
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
