@@ -11,8 +11,6 @@ spec:
       image: forcedinductionz/ubuntu-zephyr:las16
       stdin: true
       tty: true
-      ports:
-        - containerPort: 8000
       volumeMounts:
       - name: nfs
         mountPath: "/mnt/artifacts"
