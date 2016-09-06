@@ -4,6 +4,7 @@ metadata:
   generateName: zephyr-ci-
   labels:
     app: zephyr-ci
+  namespace: titan
 spec:
   containers:
     - name: zephyr-builder
@@ -12,18 +13,3 @@ spec:
       tty: true
       ports:
         - containerPort: 8000
-      env:
-      - name: ZEPHYR_OUTDIR
-        value: /var/www/html/zephyr
-    - name: lava-dev
-      image: forcedinductionz/lava-docker:las16
-      ports:
-      - containerPort: 80
-      stdin: true
-      tty: true
-      securityContext:
-        privileged: true
-  volumes:
-  - name: dev
-    hostPath:
-      path: /dev
