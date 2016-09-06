@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  generation: 2
+  labels:
+    run: lava-titan
+  name: lava-titan
+  namespace: titan
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: lava-titan
+    spec:
+      containers:
+      - name: lava-titan
+        image: forcedinductionz/lava-docker:las16
+        ports:
+        - containerPort: 80
+        stdin: true
+        tty: true
+        securityContext:
+          privileged: true
+      volumes:
+      - name: dev
+        hostPath:
+          path: /dev
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
