@@ -3,7 +3,6 @@ kubectl delete pv nfs
 kubectl --namespace=titan delete service gitolite
 kubectl --namespace=titan delete service redis
 kubectl --namespace=titan delete service simple-storage
-kubectl --namespace=titan delete service mariadb
 kubectl --namespace=titan delete service lava-titan
 kubectl create -f volumes/nfs-pv.yaml --record
 kubectl create -f volumes/nfs-pvc.yaml --record
