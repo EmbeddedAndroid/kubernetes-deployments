@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: broker
-        image: forcedinductionz/broker
+        image: forcedinductionz/broker:latest
         ports:
         - containerPort: 5555
         - containerPort: 5556
