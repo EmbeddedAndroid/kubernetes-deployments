@@ -18,7 +18,7 @@ spec:
         image: forcedinductionz/broker
         ports:
         - containerPort: 5555
-          containerPort: 5556
+        - containerPort: 5556
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
