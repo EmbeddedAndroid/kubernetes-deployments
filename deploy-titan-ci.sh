@@ -11,7 +11,7 @@ kubectl create -f volumes/nfs-pvc.yaml --record
 kubectl create -f deployments/broker.yaml --record
 kubectl expose --namespace=titan -f deployments/broker.yaml --external-ip="192.168.1.2"
 kubectl create -f deployments/mariadb.yaml --record
-kubect expose --namespace=titan -f deployments/mariadb.yaml
+kubectl expose --namespace=titan -f deployments/mariadb.yaml
 kubectl create -f deployments/simple-storage.yaml --record
 kubectl expose --namespace=titan -f deployments/simple-storage.yaml --external-ip="192.168.1.2"
 kubectl create -f deployments/lava-titan.yaml --record
