@@ -25,7 +25,7 @@ spec:
         - name: MYSQL_USER
           value: hawkbit
         - name: MYSQL_PASSWORD
-          value: 1234
+          value: '1234'
         - name: MYSQL_DATABASE
           value: MYSQL
       dnsPolicy: ClusterFirst
