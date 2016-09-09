@@ -21,7 +21,7 @@ spec:
         - containerPort: 3306
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: 1234
+          value: ROOT_PASSWORD
         - name: MYSQL_USER
           value: hawkbit
         - name: MYSQL_PASSWORD
