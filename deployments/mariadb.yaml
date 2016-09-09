@@ -21,13 +21,13 @@ spec:
         - containerPort: 3306
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: ROOT_PASSWORD
+          value: '1234'
         - name: MYSQL_USER
           value: hawkbit
         - name: MYSQL_PASSWORD
           value: '1234'
         - name: MYSQL_DATABASE
-          value: MYSQL
+          value: hawkbit
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
