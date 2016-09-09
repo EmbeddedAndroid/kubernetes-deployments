@@ -9,7 +9,7 @@ kubectl --namespace=titan delete service broker
 kubectl create -f volumes/nfs-pv.yaml --record
 kubectl create -f volumes/nfs-pvc.yaml --record
 kubectl create -f deployments/hawkbit.yaml --record
-kubectl expose --namespace=titan -f deployments/hawkbit.yaml --external-ip"192.168.1.2"
+kubectl expose --namespace=titan -f deployments/hawkbit.yaml --external-ip="192.168.1.2"
 kubectl create -f deployments/broker.yaml --record
 kubectl expose --namespace=titan -f deployments/broker.yaml --external-ip="192.168.1.2"
 kubectl create -f deployments/mariadb.yaml --record
