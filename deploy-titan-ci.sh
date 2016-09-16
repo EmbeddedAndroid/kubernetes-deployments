@@ -1,3 +1,5 @@
+kubectl --namespace=titan delete pvc gitolite
+kubectl delete pv gitolite
 kubectl --namespace=titan delete pvc storage
 kubectl delete pv storage
 kubectl --namespace=titan delete service gitolite
@@ -7,6 +9,8 @@ kubectl --namespace=titan delete service lava-titan
 kubectl --namespace=titan delete service mariadb
 kubectl --namespace=titan delete service hawkbit
 kubectl --namespace=titan delete service broker
+kubectl create -f volumes/gitolite-pv.yaml --record
+kubectl create -f volumes/gitolite-pvc.yaml --record
 kubectl create -f volumes/storage-pv.yaml --record
 kubectl create -f volumes/storage-pvc.yaml --record
 kubectl create -f deployments/hawkbit.yaml --record
