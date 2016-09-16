@@ -19,12 +19,12 @@ spec:
         ports:
         - containerPort: 5000
         volumeMounts:
-        - name: nfs
+        - name: storage
           mountPath: "/mnt/artifacts"
       volumes:
-      - name: nfs
+      - name: storage
         persistentVolumeClaim:
-          claimName: nfs
+          claimName: storage
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       terminationGracePeriodSeconds: 30

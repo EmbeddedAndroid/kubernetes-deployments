@@ -13,11 +13,11 @@ spec:
       stdin: true
       tty: true
       volumeMounts:
-      - name: nfs
+      - name: storage
         mountPath: "/mnt/artifacts"
   volumes:
-  - name: nfs
+  - name: storage
     persistentVolumeClaim:
-      claimName: nfs
+      claimName: storage
   restartPolicy: Never
 
