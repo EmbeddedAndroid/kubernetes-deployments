@@ -18,6 +18,8 @@ spec:
         image: forcedinductionz/lava-docker:las16
         ports:
         - containerPort: 80
+        - containerPort: 5555
+        - containerPort: 5556
         stdin: true
         tty: true
         securityContext:
