@@ -21,10 +21,15 @@ spec:
         volumeMounts:
         - name: storage
           mountPath: "/mnt/artifacts"
+        - name: storage-static
+          mountPath: "/mnt/artifacts-static"
       volumes:
       - name: storage
         persistentVolumeClaim:
           claimName: storage
+      - name: storage-static
+        persistentVolumeClaim:
+          claimName: storage-static
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
