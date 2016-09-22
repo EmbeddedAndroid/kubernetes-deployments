@@ -4,7 +4,7 @@ metadata:
   generation: 2
   labels:
     run: web-server
-  name: gitolite
+  name: web-server
   namespace: titan
 spec:
   replicas: 1
