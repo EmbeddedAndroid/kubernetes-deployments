@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  generation: 2
+  labels:
+    run: web-server
+  name: web-server
+  namespace: titan
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: web-server
+    spec:
+      containers:
+      - name: web-server
+        image: milocasagrande/gitci-docker-nginx:latest
+        ports:
+          - containerPort: 80
+        volumeMounts:
+          - name: storage
+            mountPath: "/mnt/artifacts"
+            readOnly: true
+          - name: storage-static
+            mountPath: "/mnt/artifacts-static"
+            readOnly: true
+      volumes:
+        - name: storage
+        - name: storage-static
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30

@@ -11,6 +11,7 @@ kubectl --namespace=titan delete service lava-titan
 kubectl --namespace=titan delete service mariadb
 kubectl --namespace=titan delete service hawkbit
 kubectl --namespace=titan delete service broker
+kubectl --namespace=titan delete service nginx
 kubectl create -f volumes/gitolite-pv.yaml --record
 kubectl create -f volumes/gitolite-pvc.yaml --record
 kubectl create -f volumes/storage-pv.yaml --record
@@ -32,3 +33,5 @@ kubectl expose --namespace=titan -f deployments/gitolite.yaml --port=9002 --targ
 sleep 10
 kubectl create -f deployments/hawkbit.yaml --record
 kubectl expose --namespace=titan -f deployments/hawkbit.yaml --external-ip="192.168.1.2"
+kubectl create -f deployments/nginx.yaml --record
+kubectl expose --namespace=titan -f deployments/nginx.yaml --external-ip="192.168.1.2" --target-port=80 --port=80
