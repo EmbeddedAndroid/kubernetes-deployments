@@ -32,6 +32,6 @@ kubectl create -f deployments/nginx.yaml --record
 kubectl expose --namespace=titan -f deployments/nginx.yaml --external-ip="192.168.1.2"
 kubectl create -f deployments/gitolite.yaml --record
 kubectl expose --namespace=titan -f deployments/gitolite.yaml --port=9002 --target-port=22 --external-ip="192.168.1.2"
-sleep 10
+sleep 30
 kubectl create -f deployments/hawkbit.yaml --record
 kubectl expose --namespace=titan -f deployments/hawkbit.yaml
