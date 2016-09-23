@@ -24,10 +24,17 @@ spec:
         tty: true
         securityContext:
           privileged: true
+        volumeMounts:
+          - name: storage
+            mountPath: "/mnt/artifacts"
+            readOnly: true
       volumes:
       - name: dev
         hostPath:
           path: /dev
+      - name: storage
+        persistentVolumeClaim:
+          claimName: storage
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
