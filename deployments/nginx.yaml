@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   generation: 2
   labels:
-    run: web-server
+    run: nginx
   name: nginx
   namespace: titan
 spec:
@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       labels:
-        app: web-server
+        app: nginx
     spec:
       containers:
       - name: nginx
