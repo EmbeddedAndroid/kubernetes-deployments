@@ -26,8 +26,12 @@ spec:
             mountPath: "/mnt/artifacts-static"
             readOnly: true
       volumes:
-        - name: storage
-        - name: storage-static
+      - name: storage
+        persistentVolumeClaim:
+          claimName: storage
+      - name: storage-static
+        persistentVolumeClaim:
+          claimName: storage-static
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
