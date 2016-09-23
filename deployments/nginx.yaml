@@ -4,7 +4,7 @@ metadata:
   generation: 2
   labels:
     run: web-server
-  name: web-server
+  name: nginx
   namespace: titan
 spec:
   replicas: 1
@@ -14,7 +14,7 @@ spec:
         app: web-server
     spec:
       containers:
-      - name: web-server
+      - name: nginx
         image: milocasagrande/gitci-docker-nginx:latest
         ports:
           - containerPort: 80

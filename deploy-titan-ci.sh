@@ -23,15 +23,15 @@ kubectl expose --namespace=titan -f deployments/mariadb.yaml
 kubectl create -f deployments/broker.yaml --record
 kubectl expose --namespace=titan -f deployments/broker.yaml
 kubectl create -f deployments/simple-storage.yaml --record
-kubectl expose --namespace=titan -f deployments/simple-storage.yaml --external-ip="192.168.1.2"
+kubectl expose --namespace=titan -f deployments/simple-storage.yaml
 kubectl create -f deployments/lava-titan.yaml --record
-kubectl expose --namespace=titan -f deployments/lava-titan.yaml --external-ip="192.168.1.2"
+kubectl expose --namespace=titan -f deployments/lava-titan.yaml
 kubectl create -f deployments/redis.yaml --record
 kubectl expose --namespace=titan -f deployments/redis.yaml
+kubectl create -f deployments/nginx.yaml --record
+kubectl expose --namespace=titan -f deployments/nginx.yaml --external-ip="192.168.1.2"
 kubectl create -f deployments/gitolite.yaml --record
 kubectl expose --namespace=titan -f deployments/gitolite.yaml --port=9002 --target-port=22 --external-ip="192.168.1.2"
 sleep 10
 kubectl create -f deployments/hawkbit.yaml --record
-kubectl expose --namespace=titan -f deployments/hawkbit.yaml --external-ip="192.168.1.2"
-kubectl create -f deployments/nginx.yaml --record
-kubectl expose --namespace=titan -f deployments/nginx.yaml --external-ip="192.168.1.2" --target-port=80 --port=80
+kubectl expose --namespace=titan -f deployments/hawkbit.yaml
