@@ -25,7 +25,7 @@ kubectl expose --namespace=titan -f deployments/broker.yaml
 kubectl create -f deployments/simple-storage.yaml --record
 kubectl expose --namespace=titan -f deployments/simple-storage.yaml
 kubectl create -f deployments/lava-titan.yaml --record
-kubectl expose --namespace=titan -f deployments/lava-titan.yaml
+kubectl expose --namespace=titan -f deployments/lava-titan.yaml --external-ip="192.168.1.3"
 kubectl create -f deployments/redis.yaml --record
 kubectl expose --namespace=titan -f deployments/redis.yaml
 kubectl create -f deployments/nginx.yaml --record
