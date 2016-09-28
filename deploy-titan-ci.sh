@@ -4,6 +4,8 @@ kubectl --namespace=titan delete pvc storage
 kubectl delete pv storage
 kubectl --namespace=titan delete pvc storage-static
 kubectl delete pv storage-static
+kubectl --namespace=titan delete pvc redis-data
+kubectl delete pv redis-data
 kubectl --namespace=titan delete service gitolite
 kubectl --namespace=titan delete service redis
 kubectl --namespace=titan delete service simple-storage
@@ -18,6 +20,8 @@ kubectl create -f volumes/storage-pv.yaml --record
 kubectl create -f volumes/storage-pvc.yaml --record
 kubectl create -f volumes/storage-static-pv.yaml --record
 kubectl create -f volumes/storage-static-pvc.yaml --record
+kubectl create -f volumes/redis-data-pv.yaml --record
+kubectl create -f volumes/redis-data-pvc.yaml --record
 kubectl create -f deployments/mariadb.yaml --record
 kubectl expose --namespace=titan -f deployments/mariadb.yaml
 kubectl create -f deployments/broker.yaml --record
